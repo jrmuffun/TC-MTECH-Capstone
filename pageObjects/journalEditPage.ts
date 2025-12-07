@@ -1,7 +1,6 @@
 import Utils from "./utils.ts";
 import JournalCommon from "./journalCommon.ts"
 import Base from "./base.ts";
-import journalCommon from "./journalCommon.ts";
 
 class JournalEditPage extends Base {
 
@@ -37,7 +36,7 @@ class JournalEditPage extends Base {
     }
     async randEmoji() {
         await this.emojiListTitle.waitForExist();
-        return await Utils.chooseRandomElement(await this.emojiList);
+        return await Utils.chooseRandomElement(this.emojiList);
     }
 
     //**Methods**\\
@@ -76,10 +75,10 @@ class JournalEditPage extends Base {
         await this.addMoodBttn.waitForExist();
         // Check different types and click the element by its name
         if(elementType == 'MOOD') {
-            await Utils.clickElementByName(oldElementName,journalCommon.allMoods);
+            await Utils.clickElementByName(oldElementName,JournalCommon.allMoods);
         }
         else if(elementType == 'ACTIVITY') {
-            await Utils.clickElementByName(oldElementName,journalCommon.allActivities);
+            await Utils.clickElementByName(oldElementName,JournalCommon.allActivities);
         }
         else if(elementType == 'CATEGORY') {
             // temp solution since I dont have a selector to find categories
