@@ -19,7 +19,7 @@ class Home extends Base {
         await (await this.getRandJournalEntryMood()).click();
     }
     async assertAlertBoxText(expectedAlertText:string) {
-        const selector:string = "android=new UiSelector().text(\"" + expectedAlertText + "\")"
+        const selector:string = `android=new UiSelector().text("${expectedAlertText}")`
         const alertBoxElement = $(selector)
         await expect(alertBoxElement).toHaveText(expectedAlertText)
     }
