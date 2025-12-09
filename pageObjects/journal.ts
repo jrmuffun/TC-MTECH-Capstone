@@ -1,17 +1,16 @@
 import Base from './base.ts';
-import Utils from "./utils.ts";
-import JournalCommon from "./journalCommon.ts";
 
-export class JournalPage extends Base {
+export class Journal extends Base {
 
+    //**Selectors**\\
     get journalText() {
         return $('android=new UiSelector().text("Write something here")')
     }
-
     async randActivity() {
-        return await Utils.chooseRandomElement(JournalCommon.allActivities);
+        return await this.chooseRandomElement(this.allJournalActivities);
     }
 
+    //**Methods**\\
     async clickRandActivity() {
         await this.journalText.waitForDisplayed();
         await (await this.randActivity()).click();
@@ -20,11 +19,14 @@ export class JournalPage extends Base {
         await this.journalText.setValue(journalText);
     }
     async cancelJournalEntry() {
-        await JournalCommon.cancelJournalBttn.click();
-        await JournalCommon.discardEntryPopup.click();
+        await Base.findElementByText("Cancel").click();
+        await Base.findElementByText("DISCARD").click();
+    }
+    async saveJournal() {
+        await Base.findElementByText("Save").click();
     }
 
 
 }
 
-export default new JournalPage();
+export default new Journal();

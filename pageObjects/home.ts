@@ -1,7 +1,6 @@
 import Base from './base.ts'
-import Utils from './utils.ts'
 
-class HomePage extends Base {
+class Home extends Base {
     private get homeTitle() {
         return $('new UiSelector().textContains("Hello")')
     }
@@ -12,7 +11,7 @@ class HomePage extends Base {
         return $$('//android.view.ViewGroup[@content-desc]/android.widget.ImageView/..')
     }
     private async getRandJournalEntryMood() {
-        return Utils.chooseRandomElement(this.journalEntryMoods);
+        return this.chooseRandomElement(this.journalEntryMoods);
     }
 
     async clickRandJournalEntryMood() {
@@ -32,4 +31,4 @@ class HomePage extends Base {
     }
 }
 
-export default new HomePage();
+export default new Home();

@@ -1,6 +1,8 @@
+// noinspection SpellCheckingInspection
+
 import Base from "./base.ts";
 
-class LoginPage extends Base {
+class Login extends Base {
     get skipBttn() {
         return $('android=new UiSelector().text("Skip")')
     }
@@ -23,4 +25,4 @@ class LoginPage extends Base {
     }
 }
 
-export default new LoginPage();
+export default new Login();
