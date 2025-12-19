@@ -9,6 +9,8 @@ Automated integration tests writted for the Journaly mobile app. A highly custom
 
 This was created as my capstone/final project as part of my time at MTECH (Mountainland Technical College).
 
+https://github.com/user-attachments/assets/275dedd7-03e1-46b5-bad4-9710810fa257
+
 
 
 
